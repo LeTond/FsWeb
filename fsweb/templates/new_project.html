@@ -1,0 +1,80 @@
+<!-- templates/new_project.html -->
+
+{% extends 'index.html' %}
+
+{% block tittle %}Новый проект{% endblock %}
+
+{% block content %}
+
+
+<div class="centerLayerNewProject orient_box color_back">
+    <div align="center"><strong>Создание нового проекта</strong>
+    </div><br>
+
+    <div>
+    <form method="POST">
+        {% csrf_token %}
+        <table cellpadding="4" align="center">
+            <tr><td align="right">Файл для обработки:</td>
+            <td><select id="file" name="files" onChange="redirectUrl()">
+                    {% for file in files %}
+                    <option name="files" value="{{ file }}">
+                        {% if file == current_file %}selected="selected"{% endif %}>
+                        {{ file }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </td></tr>
+
+            <tr><td align="right">Параметры обработки: </td>
+            <td><select id="param" name="parameters" onChange="redirectUrl()">
+                {% for param in parameters %}
+                <option name="parameters" value="{{ param }}">
+                    {% if param == current_param %}selected="selected"{% endif %}>
+                    {{ param }}
+                </option>
+                {% endfor %}
+                </select>
+            </td></tr>
+
+            <tr><td align="right">Название проекта: </td>
+            <td><input type="text" name="project_name" value="{{ project }}"/>
+            </td></tr>
+
+            <tr><td align="right">ФИО субъекта: </td>
+            <td><input type="text" name="subject_name" value="{{ subject }}"/>
+            </td></tr>
+
+            <tr><td align="right">Пол: </td>
+            <td><select id="sex" name="sex_s" onChange="redirectUrl()">
+                    {% for sex in sex_s %}
+                    <option name="sex" value="{{ sex }}">
+                        {% if sex == current_sex %}selected="selected"{% endif %}>
+                        {{ sex }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </td></tr>
+
+           <tr><td align="right">Дата рождения: </td>
+            <td><input type="date" name="date_of_birth" value="{{ birthday }}"/>
+                {{ Неизвестно }}
+           </td></tr>
+
+            <tr><td align="right">Дата исследования: </td>
+            <td>
+                <input type="date" name="date_of_study" value="{{ study_day }}"/>
+           </td></tr>
+
+            <tr><td align="right">Патология: </td>
+            <td><input type="text" name="pathology_name" value="Введите значение"
+                       onblur="if(value=='') value = 'Неизвестно'"
+                       onfocus="if(value=='Введите значение') value = ''">
+            </td></tr>
+        </table>
+
+    <br><div align="center"><input type="submit" value="Начать обработку исследования">
+    </div>
+    </form></div>
+</div>
+{% endblock %}

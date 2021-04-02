@@ -1,0 +1,90 @@
+<!-- templates/compare_list.html -->
+
+{% extends 'index.html' %}
+
+{% block tittle %}Сравнение исследований{% endblock %}
+
+{% block content %}
+
+<h1 class="centerLayerTitle color_back">Сравнение исследований</h1>
+<table class="centerLayer color_back">
+    <div align="center">
+        <tr>
+            <th>Структура</th>
+            <th>Изменения</th>
+            <th>{{subject.name}}<br>ДИ: {{subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>{{compare_subject.name}}<br>ДИ: {{compare_subject.date_of_study}}<br>(см^3 / %)</th>
+        </tr>
+        {% for stat in compare_list %}
+        <tr>
+            <td>{{ stat.zone }}</td>
+            <td>{{ stat.report }}</td>
+            <td>{{ stat.param1 }} ({{ stat.ref_vol1 }}%)</td>
+            <td>{{ stat.param2 }} ({{ stat.ref_vol2 }}%)</td>
+        </tr>
+        {% endfor %}
+    </div>
+</table>
+
+<h1 class="centerLayerTitle color_back">Положительные изменения</h1>
+<table class="centerLayer color_back">
+    <div align="center">
+        <tr>
+            <th>Структура</th>
+            <th>{{subject.name}}<br>ДИ: {{subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>{{compare_subject.name}}<br>ДИ: {{compare_subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>Разница в объёме<br>(см^3)</th>
+        </tr>
+        {% for stat in pos_list %}
+        <tr>
+            <td>{{ stat.zone }}</td>
+            <td>{{ stat.param1 }} (<a class="green_report_digit">{{ stat.ref_vol1 }}</a>%)</td>
+            <td>{{ stat.param2 }} (<a class="green_report_digit">{{ stat.ref_vol2 }}</a>%)</td>
+            <td>{{ stat.diff }} (<a class="green_report_digit">{{ stat.ref_diff }}</a>%)</td>
+        </tr>
+        {% endfor %}
+    </div>
+</table>
+
+<h1 class="centerLayerTitle color_back">Отрицательные изменения</h1>
+<table class="centerLayer color_back">
+    <div align="center">
+        <tr>
+            <th>Структура</th>
+            <th>{{subject.name}}<br>ДИ: {{subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>{{compare_subject.name}}<br>ДИ: {{compare_subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>Разница в объёме<br>(см^3)</th>
+        </tr>
+        {% for stat in neg_list %}
+        <tr>
+            <td>{{ stat.zone }}</td>
+            <td>{{ stat.param1 }} (<a class="red_report_digit">{{ stat.ref_vol1 }}</a>%)</td>
+            <td>{{ stat.param2 }} (<a class="red_report_digit">{{ stat.ref_vol2 }}</a>%)</td>
+            <td>{{ stat.diff }} (<a class="red_report_digit">{{ stat.ref_diff }}</a>%)</td>
+        </tr>
+        {% endfor %}
+    </div>
+</table>
+
+<h1 class="centerLayerTitle color_back">Без изменений</h1>
+<table class="centerLayer color_back">
+    <div align="center">
+        <tr>
+            <th>Структура</th>
+            <th>{{subject.name}}<br>ДИ: {{subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>{{compare_subject.name}}<br>ДИ: {{compare_subject.date_of_study}}<br>(см^3 / %)</th>
+            <th>Разница в объёме<br>(см^3)</th>
+        </tr>
+        {% for stat in orig_list %}
+        <tr>
+            <td>{{ stat.zone }}</td>
+            <td>{{ stat.param1 }} (<a>{{ stat.ref_vol1 }}</a>%)</td>
+            <td>{{ stat.param2 }} (<a>{{ stat.ref_vol2 }}</a>%)</td>
+            <td>{{ stat.diff }} (<a>{{ stat.ref_diff }}</a>%)</td>
+        </tr>
+        {% endfor %}
+    </div>
+</table>
+
+{% endblock %}
+

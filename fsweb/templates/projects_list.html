@@ -1,0 +1,58 @@
+<!-- templates/projects_list.html -->
+
+{% extends 'index.html' %}
+
+{% block tittle %}Список проектов{% endblock %}
+
+{% block content %}
+
+<div class="search_block">
+    <form action="{% url 'projects' %}" method="get">
+        <input class="search" name="q1" type="text" placeholder="Поиск проекта...">
+        <input class="search2" type="submit" value="Найти">
+    </form>
+</div><br>
+
+<table class="centerLayerProjects orient_box color_back">
+    <div align="center">
+        <tr>
+            <th>ID</th>
+            <th>Проекты</th>
+            <th></th>
+        </tr>
+        {% for project in project_list %}
+        <tr>
+
+            <td>{{ project.id }}</td>
+            <td>{{ project.name }}</td>
+
+            <td>
+                <form action="{% url 'subjects_in_project' project_id=project.id %}" method="GET">
+                    {% csrf_token %}
+                    <input class="color_open_button" type="submit" value="Исследования">
+                </form>
+            </td>
+
+            <td>
+                <form action="{% url 'edit-project' project_id=project.id %}" method="GET">
+                    {% csrf_token %}
+                    <input class="color_change_button" type="submit" value="Редактировать">
+                </form>
+            </td>
+
+            <td>
+                <form action="{% url 'delete-project' project_id=project.id %}" method="POST">
+                    {% csrf_token %}
+                    <input class="color_delete_button" type="submit" value="Удалить"
+                           onclick="return confirm('Вы уверены, что хотите удалить проект и все исследования в нём?')">
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+    </div>
+</table>
+
+{% endblock %}
+

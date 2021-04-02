@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block tittle %}Редактировать исследование{% endblock %}
+
+{% block content %}
+
+<div class="centerLayer color_back">
+<div class="center">
+    <form method="POST">
+        {% csrf_token %}
+        <p><label>ФИО субъекта: </label>
+            <input type="text" name="name" value="{{ subject.name }}"/></p>
+
+        <p><label>Пол: </label>
+            <input type="text" name="sex" value="{{ subject.sex }}"/></p>
+
+        <p><label>Дата рождения: {{ subject.date_of_birth }} <br><p></p> Новая дата рождения: </label>
+            <input type="date" name="date_of_birth" value="subject.date_of_birth"/></p>
+
+        <p><label>Дата исследования: {{ subject.date_of_study }} <br><p></p> Новая дата исследования: </label>
+            <input type="date" name="date_of_study" value="subject.date_of_study"/></p>
+
+        <p><label>Патология: </label>
+            <input type="text" name="pathology" value="{{ subject.pathology.name }}"/></p>
+
+        <p><input type="submit" value="Сохранить"></p>
+    </form>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,81 @@
+<!-- templates/index.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block tittle %}BrainStat{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
+</head>
+
+<body>
+<div class="bottom_background">
+    <div class="bar color_bar">
+        <div class="bar_home bar_home_button">
+            <a class="bar_item_home bar_item_font" href="{% url 'index' %}"
+               onclick="open_search(this)" title="На домашнюю страницу" aria-hidden="true">
+                <img src="/static/img/freeviewcrop.png" alt="Домашняя страница" height="70">
+            </a>
+        </div>
+
+        <div class="bar_buttons bar_button">
+            <a class="bar_item_button bar_item_font" href="{% url 'instructs' %}"
+               title="Информация по использованию инструментов BrainStat">Инструкции</a>
+            <a class="bar_item_button bar_item_font" href="{% url 'new-project' %}" title="Создание нового проекта">Новый
+                проект</a>
+            <a class="bar_item_button bar_item_font" href="{% url 'projects' %}" title="Список созданных проектов">Проекты</a><br>
+            <a class="bar_item_button bar_item_font" href="{% url 'subjects' %}"
+               title="Список исследований имеющихся в базе данных">Исследования</a>
+            <a class="bar_item_button bar_item_font" href="{% url 'lie-viewer' %}"
+               title="Тут должен быть просмотровщик..., но потом">Просмотровщик</a>
+            <a class="bar_item_button bar_item_font" href="{% url 'info' %}" title="Контактная информация">Контакты</a>
+        </div>
+    </div>
+
+    {% block content %}
+
+    <div class="centerLayerHomeTitle orient_box color_back">
+        <br>
+        <a>Пару слов о <strong>BrainStat</strong></a>
+
+        <p>
+            <img src="/static/img/04.png" alt="Альтернативный текст" align="right" height="200px"
+                 style="border: 10px solid #ffffff;"/>
+            BrainStat - это веб-ресур, позволяющий упростить обработку и анализ данных МР-морфометрии головного
+            мозга. Весь процесс обработки исследования осуществляется автоматически и не требует участия
+            пользователя.
+        </p>
+
+        <p>Обрабатывайте данные, сравнивайте исследования и получайте доступ к своей базе данных со всеми результатами
+            пациентов с любого компьютера или телефона вместе с BrainStat.</p>
+
+        <br><br>
+        <p>Магнитно-резонансная морфометрия (Voxel-based morphometry) – методика, позволяющая получить данные об объёме
+            различных структур серого и белого вещества головного мозга на основе компьютерной обработки
+            МРТ-изображений.</p>
+
+
+        <br>
+        <h3>Новости нашего проекта</h3>
+
+        <div class="news_background">
+            <h4>06.03.2021</h4>
+            <p>В ближайшее время для вас станет доступным получение результатов толщины коры</p>
+        </div>
+        <p></p>
+        <div class="news_background">
+            <h4>01.03.2021</h4>
+            <p>Реализована автоматическая обработка МР-мофрометрии - анализ и сравнение объёмных данных ГМ.
+                Теперь можно хранить свои исследования в базе данных. Также стало доступным редактирование информации
+                об исследовании и проекте.</p>
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+</body>
+
+</html>

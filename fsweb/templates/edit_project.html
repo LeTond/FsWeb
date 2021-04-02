@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block tittle %}Редактировать проект{% endblock %}
+
+{% block content %}
+
+<div class="centerLayer color_back">
+<div class="center">
+    <form method="POST">
+        {% csrf_token %}
+        <p><label>Введите название проекта: </label>
+            <input type="text" name="name" value="{{ project.name }}"/></p>
+        <p><input type="submit" value="Сохранить"></p>
+    </form>
+</div>
+</div>
+{% endblock %}
+

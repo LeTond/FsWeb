@@ -1,0 +1,45 @@
+<!-- templates/statistic_list.html -->
+
+{% extends 'index.html' %}
+
+{% block tittle %}Статистические данные{% endblock %}
+
+{% block content %}
+<h1 class="centerLayerTitle color_back"> Общие объёмы головного мозга </h1>
+<div class="centerLayer color_back">
+    {% for main_st in main_stats %}
+    {{main_st.name}}: <strong>{{main_st.parameter}} см^3</strong> ({{main_st.ref_vol}}%)<br>
+    {% endfor %}
+</div><br>
+
+<h1 class="centerLayerTitle color_back"> Данные по структурам головного мозга </h1>
+<table class="centerLayer color_back">
+    <div align="center">
+
+        <tr>
+            <th>Name</th>
+            <th>NVoxels</th>
+            <th>Volume_cm^3</th>
+            <th>normMean</th>
+            <th>normStdDev</th>
+            <th>normMin</th>
+            <th>normMax</th>
+            <th>normRange</th>
+            <th></th>
+        </tr>
+        {% for stat in release_stat %}
+        <tr>
+            <td>{{ stat.name }}</td>
+            <td>{{ stat.NVoxels }}</td>
+            <td><strong>{{ stat.Volume_mm3 }}</strong></td>
+            <td>{{ stat.normMean }}</td>
+            <td>{{ stat.normStdDev }}</td>
+            <td>{{ stat.normMin }}</td>
+            <td>{{ stat.normMax }}</td>
+            <td>{{ stat.normRange }}</td>
+        </tr>
+        {% endfor %}
+    </div>
+</table>
+{% endblock %}
+
