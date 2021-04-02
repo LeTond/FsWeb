@@ -1,0 +1,331 @@
+
+body {
+    background-image: url('/static/img/fone2.jpg');
+    background-attachment: fixed, scroll;
+    background-repeat: repeat-y, repeat-y;
+    background-size: cover;
+    height: auto;
+    display: block;
+    max-width: 1900px;
+    min-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+.bottom_background {
+    position: relative;
+    width: 100%;
+    height: 2600px;
+    overflow: hidden;
+}
+
+.centerLayer {
+    position: relative;
+    width: 100%;
+    left: 5px;
+    top: 50px;
+    padding: 2%;
+
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.centerLayerTitle {
+    position: relative;
+    width: 100%;
+    left: 5px;
+    top: 65px;
+    padding-top: 2%;
+    padding-left: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.centerLayerNewProjectTitle {
+    top: 65px;
+    padding-top: 2%;
+    padding-left: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.centerLayerInstructionsTitle {
+    padding-left: 4%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 18px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.centerLayerHomeTitle {
+    padding-left: 4%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.orient_box {
+    position: relative;
+    width: 60%;
+    left: 18%;
+}
+
+.centerLayerNewProject {
+    top: 50px;
+    padding: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 22px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.centerLayerProjects {
+    top: 50px;
+    padding: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.centerLayerStats {
+    position: relative;
+    width: 99.5%;
+    left: 5px;
+    top: 200px;
+    padding-top: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 22px;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+}
+
+.centerLayerPaginator {
+    position: relative;
+    width: 99.5%;
+    left: 5px;
+    top: 50px;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.table_head {
+    position: relative;
+    width: 99.5%;
+    top: 210px;
+    padding-top: 2%;
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-size: 30px;
+    color: yellow;
+    text-align: center;
+    overflow: hidden;
+}
+
+.color_back {
+    background: #fff;
+}
+
+.color_bar {
+    background: #074180;
+}
+
+.bar {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    opacity: 0.95;
+    float: left !important;
+    overflow: hidden;
+}
+
+.bar_home_button {
+    position: relative;
+    left: 15%;
+}
+
+.bar_buttons {
+    position: relative;
+    left:25%;
+}
+
+.bar_info_button {
+    position: relative;
+    left: 450px;
+}
+
+.loup_bar {
+    position: absolute;
+    width: 20%;
+    right: 1%;
+    opacity: 0.9;
+}
+
+a.icons.fa-home {
+    font-size: 18px !important;
+}
+
+.bar_button {
+    border: none;
+    display: inline-block;
+    font-size: 12px !important;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.bar_home {
+    border: none;
+    display: inline-block;
+    font-size: 18px !important;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+
+.bar_right {
+    float: right;
+}
+
+.bar_item_home {
+    position: relative;
+    text-decoration: none;
+    float: left;
+    font-weight: lighter;
+    border-radius: 7px;
+}
+
+.bar_item_button {
+    padding: 3px 20px;
+    text-decoration: none;
+    float: left;
+    width: auto;
+    font-weight: lighter;
+    border-radius: 7px;
+}
+
+.bar_item_font {
+    color: #fff;
+}
+
+.bar_item_button:hover {
+    background: #007bff;
+    opacity: 0.5;
+    color: #fff;
+}
+
+.bar_item_home:hover {
+    background: #007bff;
+    opacity: 0.5;
+    color: #fff;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-search::before {
+    content: url('/static/img/loupe.png');
+}
+
+.freeview {
+    background-image: url('/static/img/freeview.png')
+
+}
+
+.search_block {
+    position: absolute;
+    top: 85px;
+    right: 13%;
+}
+
+.compare_block {
+    position: absolute;
+    top: 115px;
+    right: 2%;
+}
+
+.pag {
+    position: relative;
+    width: 70%;
+    left: 15%;
+    background: bisque;
+    opacity: 0.9;
+    text-align: center;
+    border: 3px solid #666;
+    box-sizing: border-box;
+}
+
+.color_change_button {
+    background: gainsboro;
+    color: black;
+    font-weight: bolder;
+    border-radius: 7px;
+    opacity: 0.9;
+}
+
+.color_delete_button {
+    background: gainsboro;
+    color: black;
+    font-weight: bolder;
+    border-radius: 7px;
+}
+
+.color_open_button {
+    background: gainsboro;
+    color: black;
+    font-weight: bolder;
+    border-radius: 7px;
+}
+
+.color_change_button:hover {
+    background: darkorange;
+    color: black;
+}
+
+.color_delete_button:hover {
+    background: firebrick;
+    color: #fff;
+}
+
+.color_open_button:hover {
+    background: forestgreen;
+    color: #fff;
+}
+
+.red_report_digit {
+    color: firebrick;
+}
+
+.green_report_digit {
+    color: forestgreen;
+}
+
+.news_background {
+    background: #bee5eb;
+    padding: 1%;
+}
